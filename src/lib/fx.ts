@@ -1,4 +1,4 @@
-/* NIGHTFALL juice layer — canvas particles + screen shake. Zero assets, 60fps. */
+/* Guess who juice layer — canvas particles + screen shake. Zero assets, 60fps. */
 
 export const PALETTE = {
   red: "#ff2d55",

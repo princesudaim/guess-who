@@ -1,4 +1,4 @@
-/* NIGHTFALL synth SFX — pure WebAudio oscillators, zero audio files. */
+/* Guess who synth SFX — pure WebAudio oscillators, zero audio files. */
 
 let ac: AudioContext | null = null;
 let master: GainNode | null = null;

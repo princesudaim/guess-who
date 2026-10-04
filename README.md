@@ -1,4 +1,4 @@
-# NIGHTFALL — Mafia Party Game (PWA)
+# Guess who
 
 An offline, single-device (**pass-and-play**) social deduction game. One phone, 4–12 players, zero mercy.
 No accounts, no servers, no tracking — 100% client-side.
@@ -10,7 +10,7 @@ No accounts, no servers, no tracking — 100% client-side.
 - **Hand-rolled PWA** — `manifest.webmanifest` + `sw.js` (no plugins), fully installable & offline after first visit
 - **Lucide icons** — free SVG icon set
 - **Google Fonts CDN** — Unbounded + Space Grotesk
-- **Zero media files** — all juice is pure CSS keyframes, a Canvas particle engine, and WebAudio-synthesized SFX
+- **Custom logo artwork** — used in-game and as the installable app icon; all game effects are CSS, Canvas, and WebAudio
 
 ## The Rules (default)
 
@@ -41,7 +41,7 @@ Every push to `main` builds the app and deploys `dist/` to GitHub Pages using
 the workflow in `.github/workflows/deploy-pages.yml`. The production build uses
 relative asset paths so it works from the repository subpath.
 
-Live site: <https://princesudaim.github.io/build-mafia-pwa-game/>
+Live site: <https://princesudaim.github.io/guess-who/>
 
 ## Security note
 

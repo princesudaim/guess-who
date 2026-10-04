@@ -116,7 +116,7 @@ export default function StartScreen({
           className="font-display anim-flicker mt-8 text-[42px] leading-none font-black tracking-[0.1em]"
           style={{ textShadow: "0 0 34px rgba(255,45,85,0.65), 0 0 90px rgba(255,45,85,0.35)" }}
         >
-          NIGHTFALL
+          Guess who
         </h1>
         <p className="mt-3 font-display text-[10px] font-bold tracking-[0.5em] text-dim">
           ONE PHONE · ZERO TRUST

@@ -1,6 +1,6 @@
 {
-  "name": "NIGHTFALL — Mafia Party Game",
-  "short_name": "NIGHTFALL",
+  "name": "Guess who",
+  "short_name": "Guess who",
   "description": "Offline pass-and-play mafia. 4–12 players, one phone, zero mercy.",
   "start_url": "./",
   "scope": "./",
@@ -13,6 +13,12 @@
     {
       "src": "icons/icon-512.png",
       "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },

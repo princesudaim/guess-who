@@ -2,9 +2,35 @@ import { defaultSettings } from "./engine";
 import type { HighScore, LegendProfile, RoleId, ScoreRow, Settings } from "./types";
 import { pickTitle } from "./titles";
 
-const SKEY = "nightfall.settings.v1";
-const HKEY = "nightfall.highscores.v1";
-const NKEY = "nightfall.names.v1";
+const SKEY = "guess-who.settings.v1";
+const HKEY = "guess-who.highscores.v1";
+const NKEY = "guess-who.names.v1";
+const LKEY = "guess-who.legends.v1";
+
+function migrateLegacyStorage() {
+  try {
+    const marker = "guess-who.storage-migration.v1";
+    if (localStorage.getItem(marker) === "done") return;
+
+    const keys = [
+      ["nightfall.settings.v1", SKEY],
+      ["nightfall.highscores.v1", HKEY],
+      ["nightfall.names.v1", NKEY],
+      ["nightfall.legends.v1", LKEY],
+    ];
+    for (const [legacyKey, currentKey] of keys) {
+      const legacyValue = localStorage.getItem(legacyKey);
+      if (localStorage.getItem(currentKey) === null && legacyValue !== null) {
+        localStorage.setItem(currentKey, legacyValue);
+      }
+    }
+    localStorage.setItem(marker, "done");
+  } catch {
+    // Retry migration on a later load if storage is temporarily unavailable.
+  }
+}
+
+migrateLegacyStorage();
 
 export function loadSettings(): Settings {
   try {
@@ -71,8 +97,6 @@ export function saveNames(names: string[]) {
 }
 
 // ── LEGEND PROFILES (cumulative per-player stats) ──
-
-const LKEY = "nightfall.legends.v1";
 
 export function loadLegends(): LegendProfile[] {
   try {

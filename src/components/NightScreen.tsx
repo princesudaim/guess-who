@@ -150,7 +150,7 @@ export default function NightScreen({
             >
               <Moon size={44} />
             </div>
-            <div className="font-display mt-8 text-[10px] font-bold tracking-[0.5em] text-dim">NIGHTFALL CITY</div>
+            <div className="font-display mt-8 text-[10px] font-bold tracking-[0.5em] text-dim">CITY AT NIGHT</div>
             <h2 className="font-display mt-2 text-5xl font-black tracking-tight" style={{ textShadow: "0 0 40px rgba(125,211,252,0.5)" }}>
               NIGHT {round}
             </h2>

@@ -87,7 +87,7 @@ export default function GameOverScreen({
         </h1>
         <p className="mt-4 max-w-[300px] text-sm leading-relaxed text-dim">
           {impWin
-            ? "Parity achieved. The last honest lights of Nightfall flicker out — the masks own the streets now."
+            ? "Parity achieved. The last honest lights in the city flicker out — the masks own the streets now."
             : "Every imposter neutralized. The city breathes again — until the next round, anyway."}
         </p>
       </div>
