@@ -49,24 +49,13 @@ export function Backdrop() {
 
 export function LogoMark({ size = 44 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64" fill="none" aria-hidden>
-      <path
-        d="M32 4c-13.2 0-22 9.2-22 22.4 0 9.8 4.4 16.6 9.6 21.2 3.4 3 6.4 5.2 8 8.4.7 1.4 1.6 4 4.4 4s3.7-2.6 4.4-4c1.6-3.2 4.6-5.4 8-8.4 5.2-4.6 9.6-11.4 9.6-21.2C54 13.2 45.2 4 32 4Z"
-        fill="#f4f1ff"
-      />
-      <path
-        d="M12 26.5c6-3 12.2-2.2 16.8 1.2 1.5 1.1.5 3.8-1.4 3.6-5.6-.4-10.8-1.6-15.6-3.4-.6-.2-.7-1 .2-1.4Z"
-        fill="#07060d"
-      />
-      <path
-        d="M52 26.5c-6-3-12.2-2.2-16.8 1.2-1.5 1.1-.5 3.8 1.4 3.6 5.6-.4 10.8-1.6 15.6-3.4.6-.2.7-1-.2-1.4Z"
-        fill="#07060d"
-      />
-      <path
-        d="M10 25.6 C 20 20.5, 44 20.5, 54 25.6 L 52.4 29.4 C 42 24.6, 22 24.6, 11.6 29.4 Z"
-        fill="#ff2d55"
-      />
-    </svg>
+    <img
+      src="./icons/icon-512.png"
+      width={size}
+      height={size}
+      alt="Guess who"
+      className="object-contain"
+    />
   );
 }
 
@@ -82,7 +71,7 @@ export function Wordmark({ compact = false }: { compact?: boolean }) {
           )}
           style={{ textShadow: "0 0 22px rgba(255,45,85,0.55)" }}
         >
-          NIGHTFALL
+          Guess who
         </div>
         {!compact && (
           <div className="mt-1 text-[10px] font-semibold tracking-[0.42em] text-dim">

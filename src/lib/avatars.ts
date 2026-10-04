@@ -1,4 +1,4 @@
-/* NIGHTFALL avatar system
+/* Guess who avatar system
    - Preset SVG crew avatars
    - Optional uploaded photo avatars (cropped client-side, stored offline)
    - A chosen avatar NEVER changes while typing; it only changes on explicit pick/randomize
@@ -57,9 +57,33 @@ export function hashToAvatar(name: string): number {
   return h % AVATARS.length;
 }
 
-const PRESET_KEY = "nightfall.avatars.v2";
-const CUSTOM_KEY = "nightfall.avatar-images.v1";
-const GALLERY_KEY = "nightfall.avatar-gallery.v1";
+const PRESET_KEY = "guess-who.avatars.v2";
+const CUSTOM_KEY = "guess-who.avatar-images.v1";
+const GALLERY_KEY = "guess-who.avatar-gallery.v1";
+
+function migrateLegacyAvatarStorage() {
+  try {
+    const marker = "guess-who.avatar-storage-migration.v1";
+    if (localStorage.getItem(marker) === "done") return;
+
+    const keys = [
+      ["nightfall.avatars.v2", PRESET_KEY],
+      ["nightfall.avatar-images.v1", CUSTOM_KEY],
+      ["nightfall.avatar-gallery.v1", GALLERY_KEY],
+    ];
+    for (const [legacyKey, currentKey] of keys) {
+      const legacyValue = localStorage.getItem(legacyKey);
+      if (localStorage.getItem(currentKey) === null && legacyValue !== null) {
+        localStorage.setItem(currentKey, legacyValue);
+      }
+    }
+    localStorage.setItem(marker, "done");
+  } catch {
+    // Retry migration on a later load if storage is temporarily unavailable.
+  }
+}
+
+migrateLegacyAvatarStorage();
 
 export function loadPresetAvatarMap(): Record<string, number> {
   try {
